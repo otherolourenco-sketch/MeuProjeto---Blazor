@@ -1,0 +1,35 @@
+@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<section class="hero">
+    <div class="avatar" aria-hidden="true">@Iniciais</div>
+    <div>
+        <p class="hero-eyebrow">Olá, mundo! 👋</p>
+        <h1>@Nome</h1>
+        <p class="hero-sub">Estudante de @Faculdade · Desenvolvedor mobile nativo</p>
+    </div>
+</section>
+
+<section class="info-grid">
+    <div class="info-card">
+        <span class="info-label">Idade</span>
+        <span class="info-value">@Idade anos</span>
+    </div>
+    <div class="info-card">
+        <span class="info-label">Faculdade</span>
+        <span class="info-value">@Faculdade</span>
+    </div>
+    <div class="info-card">
+        <span class="info-label">Atuação</span>
+        <span class="info-value">Desenvolvimento mobile nativo</span>
+    </div>
+</section>
+
+@code {
+  private string Nome = "Pedro Nunes de Oliveira";
+  private int Idade = 21;
+  private string Faculdade = "Engenharia de Software";
+
+  private string Iniciais => string.Concat(Nome.Split(' ', StringSplitOptions.RemoveEmptyEntries).Where(p => char.IsUpper(p[0])).Select(p => p[0]).Take(2));
+}
