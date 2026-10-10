@@ -1,1 +1,1 @@
-# MeuProjeto---Blazor
+# meuprojeto-blazor
